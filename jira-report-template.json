@@ -1,0 +1,39 @@
+{
+  "project": "Specify your proyect",
+
+  "week1": {
+    "monday": {
+      "daily": {
+        "timeSpentJIRA": "15m",
+        "comment": "Daily",
+        "startTime": "9h 30m"
+      },
+      "planning": {
+        "timeSpentJIRA": "1h",
+        "comment": "Planning",
+        "startTime": "9h 30m"
+      },
+      "testing": {
+        "timeSpentJIRA": "7h 45m",
+        "comment": "Testing"
+      }
+    },
+
+    "tuesday": {
+      "daily": {
+        "timeSpentJIRA": "15m",
+        "comment": "Daily",
+        "startTime": "9h 30m"
+      },
+      "testing": {
+        "timeSpentJIRA": "7h 45m",
+        "comment": "Testing",
+        "startTime": "9h 30m"
+      }
+    }
+  },
+
+  "week2": {
+
+  }
+}
