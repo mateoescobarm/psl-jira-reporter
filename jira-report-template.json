@@ -1,6 +1,8 @@
 {
   "project": "Specify your proyect",
 
+  "firstDayToReportAt": "DD/MM/AA",
+
   "week1": {
     "monday": {
       "daily": {
