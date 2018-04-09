@@ -26,4 +26,4 @@ $ travis encrypt JIRA_PASSWORD=<your_jira_password> --add
 
 > Add for every day the work you want, the comment and the time
 
-> To know which works are available to report please refer to ```jira-works.js``` if your wokr is not there please request the admin to add it
+> To know which works are available to report please refer to ```possible-work.json``` if your work is not there please request the admin to add it
