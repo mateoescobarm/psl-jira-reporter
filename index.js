@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const { getIssues, isWorkingDay } = require('./utils');
+const { getIssues, isWorkingDay } = require('./core/report-work');
 
 const USERNAME = process.env.JIRA_USERNAME;
 const PASSWORD = process.env.JIRA_PASSWORD;
