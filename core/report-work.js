@@ -1,9 +1,9 @@
-const jiraToReport = require("./jira-reports-file.json");
+const jiraToReport = require("./../jira-reports-file.json");
 const { getColombiaHolidaysByYear } = require('colombia-holidays');
 
 const currentDate = new Date();
 
-const possibleWork = require("./possible-work.json");
+const possibleWork = require("./../possible-work.json");
 
 const weekdays = [
   "monday",
@@ -13,14 +13,11 @@ const weekdays = [
   "friday"
 ];
 
-const today = weekdays[currentDate.getDay() - 1];
-const week = getWeekNumber();
-
 const getWeekNumber = () => {
   const startingDate = getStartDateFromJiraFile();
-  let diff =(new Date.getTime() - startingDate.getTime()) / 1000;
-  diff /= (60 * 60 * 24 * 7);
-  let weekNumber = Math.abs(Math.round(diff));
+  let diff =(new Date().getTime() - startingDate.getTime()) / 1000;
+  let weekDiff = diff / (60 * 60 * 24 * 7);
+  let weekNumber = Math.abs(Math.ceil(weekDiff));
   let sprintWeek = 
     Math.abs(
       Math.floor(weekNumber/getNumberOfWeeksInSprint())
@@ -55,21 +52,24 @@ const getNumberOfWeeksInSprint = () => {
 
 const getIssues = () => {
   const issues = [];
+  let jiraIssue;
 
   for (issue in jiraToReport[week][today])
   {
-    if (issue.timeSpentJIRA !== "" && issue.timeSpentJIRA !== undefined){
-      possibleWork[issue].timeSpentJIRA = issue.timeSpentJIRA;
+    jiraIssue = jiraToReport[week][today][issue];
+    if (jiraIssue.timeSpentJIRA !== "" && jiraIssue.timeSpentJIRA !== undefined){
+      possibleWork[issue].timeSpentJIRA = jiraIssue.timeSpentJIRA;
 
-      if (issue.comment !== "" && issue.comment !== undefined){
-        possibleWork[issue].comment = issue.comment;
+      if (jiraIssue.comment !== "" && jiraIssue.comment !== undefined){
+        possibleWork[issue].comment = jiraIssue.comment;
 
-        if (issue.hasOwnProperty(startTime)){
-          possibleWork[issue].startDate = getTimeToReportAt(issue.startTime);
+        if (jiraIssue.hasOwnProperty("startTime")){
+          possibleWork[issue].startDate = getTimeToReportAt(jiraIssue.startTime);
         }
         else {
           possibleWork[issue].startDate = currentDate.setHours(8, 0);
         }
+        possibleWork[issue].project = jiraToReport.project;
         issues.push(possibleWork[issue]);
       }
     }
@@ -90,7 +90,10 @@ const isWorkingDay = () => {
   return !isHoliday;
 }
 
-module.exports = () => {
+const today = weekdays[currentDate.getDay() - 1];
+const week = getWeekNumber();
+
+module.exports = {
   getIssues,
   isWorkingDay
 };
