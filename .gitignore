@@ -67,9 +67,6 @@ build/Release
 node_modules/
 jspm_packages/
 
-# Jira reports file
-jira-reports-file.json
-
 # Typescript v1 declaration files
 typings/
 
