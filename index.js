@@ -1,8 +1,8 @@
 const request = require('request-promise');
 const { getIssues, isWorkingDay } = require('./core/report-work');
 
-const USERNAME = "<username>";
-const PASSWORD = "<password>";
+const USERNAME = process.env.JIRA_USERNAME;
+const PASSWORD = process.env.JIRA_PASSWORD;
 const URI = 'https://mercurio.psl.com.co/jira/rest/psl-worklog/1.0/psl-worklog';
 const auth = {
     user: USERNAME,
@@ -19,7 +19,6 @@ const postIssues = async () => {
                     console.log('Success!!!')
                 })
                 .catch((err) => {
-                    // console.log(err);
                     console.error(`Error: ${err.error.message}`);
                 });
         });
