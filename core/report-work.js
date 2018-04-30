@@ -18,11 +18,17 @@ const getWeekNumber = () => {
   let diff =(new Date().getTime() - startingDate.getTime()) / 1000;
   let weekDiff = diff / (60 * 60 * 24 * 7);
   let weekNumber = Math.abs(Math.ceil(weekDiff));
-  let sprintWeek = 
-    Math.abs(
-      Math.floor(weekNumber/getNumberOfWeeksInSprint())
-    ) + 1;
+  let sprintWeek = getSprintWeek(weekNumber);
   return 'week' + sprintWeek;
+};
+
+const getSprintWeek = (weekNumber) => {
+  let totalWeeks = getNumberOfWeeksInSprint();
+  for (let i = totalWeeks; i > 0 ; i--) {
+    if ((weekNumber % i) === 0) {
+      return i;
+    }
+  }
 };
 
 const getStartDateFromJiraFile = () => {
