@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mateoescobarm/jira-reporter.git"
+    "url": "git+https://github.com/mateoescobarm/psl-jira-reporter.git"
   },
   "keywords": [
     "PSL",
     "Jira",
     "Reporter"
   ],
-  "author": "Sebastian Villegas Zapata <svillegas@psl.com.co>",
+  "author": "Mateo Escobar M <mescobarm@psl.com.co>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/svillegasz/jira-reporter/issues"
+    "url": "https://github.com/mateoescobarm/psl-ira-reporter/issues"
   },
-  "homepage": "https://github.com/svillegasz/jira-reporter#readme",
+  "homepage": "https://github.com/mateoescobarm/psl-jira-reporter#readme",
   "dependencies": {
     "moment": "^2.22.0",
     "colombia-holidays": "0.0.1",
