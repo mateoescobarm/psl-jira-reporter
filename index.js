@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const { getIssues, isWorkingDay } = require('./core/report-work');
+const { getIssues, isWorkingDay } = require('./utils');
 
 const USERNAME = process.env.JIRA_USERNAME;
 const PASSWORD = process.env.JIRA_PASSWORD;
@@ -9,20 +9,16 @@ const auth = {
     pass: PASSWORD,
 };
 
-const postIssues = async () => {
-    if (await isWorkingDay()) {
-        const issues = await getIssues();
-        issues.forEach(async(json) => {
-            await request
-                .post(URI, { auth, json })
-                .then((res) => {
-                    console.log('Success!!!')
-                })
-                .catch((err) => {
-                    console.error(`Error: ${err.error.message}`);
-                });
-        });
-    }
+if (isWorkingDay()) {
+    const issues = getIssues();
+    issues.forEach((json) => {
+        request
+            .post(URI, { auth, json })
+            .then((res) => {
+                console.log('Success!!!')
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    });
 }
-
-postIssues();
