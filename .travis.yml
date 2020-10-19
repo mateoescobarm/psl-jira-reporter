@@ -9,6 +9,3 @@ node_js:
 script: node index.js
 except:
 - "/^v\\d+\\.\\d+\\.\\d+$/"
-env:
-  global:
-    secure: nC6FldUrQVgjrDrGV8iR0yi4eYmsjGuvBPL96qYyKAgcyg8MLKb+NYa4Tm12N5mRQISLdpgIsHo1vYo3UG0tJRDjTLwUzzH2rAcV1zfHCu7vPU61o7Yu2ABtENEpu8HkVo9AiBXLO5eR+i9bZ1nkFIrxFmU6nsYmwYJH5nWdo2bCdcGkkq3Acsi/N5y6zOT5KkXKIg4y6vIUMA6af1sFDHIvtLzsltaa9pFG1YBq0htfiw6U72Nul60W1VlFeBKXSOyFUbXHtZ6st98jPgQefVe+Ts/Lgk4CLY49WwxhTSxr0AwtJR9qFNOizdBXOCw5mb9+JyQ6/p+olUm+eFU0BFS3envlKlXb2EfsJvBNdM67dFaGQkYjDdg2EBgC7JpjMYRBfx/QD5r/R45hDxF0hez3BPVNcePY8ZQUrmUgPhvTDcZDd9eFY/3TwRIKDRTAsWkfM/mIoGFxnIZiho+zaWVunzYok0ftZmr2iXDl/py0zdexzM0b/s34KZNl3+ECsrdAnYEYDzINE/YEtEvNpnbxD8fjRNSy/88Q1ZO/TDTdHBGXI+HEvEu88sfzh7sr6GPkxtO/bYxtqeHWw1rBdVelXVplYrVIZ9sx/MRZX/EYQ8Hh4dit6AVrAUSmYdjiyzk8nqxj8kEJTm0HnG3XBBIrvIb4GfuFf9msqJyJjtY=
