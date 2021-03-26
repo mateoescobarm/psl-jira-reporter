@@ -2,8 +2,8 @@ const { getColombiaHolidaysByYear } = require('colombia-holidays');
 const moment = require('moment');
 
 const currentDate = moment().utcOffset(-5);
-const project = 'Kinesso Outcome Planner - Kinesso';
-const place = 'Sede PSL'
+const project = 'Ascension - Ascension';
+const place = 'Remoto';
 
 const daily = {
     comment: 'Daily',
