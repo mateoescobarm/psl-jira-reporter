@@ -2,7 +2,7 @@ const { getColombiaHolidaysByYear } = require('colombia-holidays');
 const moment = require('moment');
 
 const currentDate = moment().utcOffset(-5);
-const project = 'Ascension - Ascension';
+const project = 'LoanLogics IDEA on Demand - LoanLogics';
 const place = 'Remoto';
 
 const daily = {
